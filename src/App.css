@@ -1,16 +1,65 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
 body {
-  background: rgb(21, 21, 21);
-  font-family: "Unica One", cursive;
+  background: #F0F5F5;
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+  line-height: 1.5;
+  transition: all 0.25s linear;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #333333;
+  transition: color 0.3s linear;
 }
 
-a:visited {
-  color: black;
+a:hover {
+  color: #007BFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
 }

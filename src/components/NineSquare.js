@@ -8,10 +8,11 @@ import Medium from "../Assets/Medium";
 
 export default function NineSquare() {
   return (
-    <div>
-      <div style={{ display: "block" }}>
-        <a target='_none' href='https://github.com/StevenCreates'>
-          <TopRowIcons
+    <Container>
+      <IconBlock>
+        <IconLink aria-label="Github" target='_none' href='https://github.com/StevenCreates'>
+          <StyledIcon
+            aria-hidden="true"
             whileHover={{ scale: 1.1 }}
             href='https://github.com/StevenCreates'
             initial={{ scale: 0 }}
@@ -19,87 +20,51 @@ export default function NineSquare() {
             transition={{
               type: "spring",
               stiffness: 260,
-              damping: 25,
+              damping: 20,
             }}>
             <Github />
-          </TopRowIcons>
-        </a>
-        <TopRowIcons
-          style={{ background: "#E6D2D1" }}
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 25,
-          }}
-        />
-        <a target='_none' href='https://www.linkedin.com/in/steven-hofheins/'>
-          <TopRowIcons
+          </StyledIcon>
+        </IconLink>
+        <IconLink aria-label="LinkedIN" target='_none' href='https://www.linkedin.com/in/steven-hofheins/'>
+          <StyledIcon
+            aria-hidden="true"
             whileHover={{ scale: 1.1 }}
             initial={{ scale: 0 }}
             animate={{ rotate: 360, scale: 1 }}
             transition={{
               type: "spring",
               stiffness: 260,
-              damping: 25,
+              damping: 20,
             }}>
             <LinkedIN />
-          </TopRowIcons>
-        </a>
-        <TopRowIcons
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          style={{ background: "#76806A" }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 25,
-          }}
-        />
-      </div>
-      <div style={{ display: "block" }}>
-        <BottomRowsIcons
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          style={{ background: "#283845" }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 25,
-          }}
-        />
-        <a
+          </StyledIcon>
+        </IconLink>
+      </IconBlock>
+      <IconBlock>
+        <IconLink
+          aria-label="Medium"
           target='_none'
           href='https://medium.com/@steven_creates
         '>
-          <BottomRowsIcons
+          <StyledIcon
+            aria-hidden="true"
             whileHover={{ scale: 1.1 }}
             initial={{ scale: 0 }}
             animate={{ rotate: 360, scale: 1 }}
             transition={{
               type: "spring",
               stiffness: 260,
-              damping: 25,
+              damping: 20,
             }}>
             <Medium />
-          </BottomRowsIcons>
-        </a>
-        <BottomRowsIcons
-          initial={{ scale: 0 }}
-          style={{ background: "#3E496C" }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 25,
-          }}
-        />
-      </div>
-      <div style={{ display: "block" }}>
+          </StyledIcon>
+        </IconLink>
+      </IconBlock>
+      <IconBlock>
         <AnimatePresence>
-          <a href='mailto:steven@stevencreates.tech'>
-            <BottomRowsIcons
+          <IconLink aria-label="Email" href='mailto:steven@stevencreates.tech'>
+            <StyledIcon
+              aria-hidden="true"
               initial={{ scale: 1, rotate: 360 }}
               animate={{
                 rotate: ["0deg", "6deg", "0deg", "-6deg", "0deg"],
@@ -112,54 +77,51 @@ export default function NineSquare() {
                 delay: 0,
               }}>
               <Mail />
-            </BottomRowsIcons>
-          </a>
+            </StyledIcon>
+          </IconLink>
         </AnimatePresence>
-        <BottomRowsIcons
-          style={{ background: "#487E80" }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            repeate: Infinity,
-            type: "spring",
-            stiffness: 260,
-            damping: 25,
-          }}></BottomRowsIcons>
-      </div>
-    </div>
+      </IconBlock>
+    </Container>
   );
 }
 
-const BottomRowsIcons = styled(motion.div)`
-  min-height: 60px;
-  max-height: 60px;
-  min-width: 60px;
-  max-width: 60px;
-  display: inline-block;
-  background: white;
-  border-radius: 5px;
-  margin-top: 1.5rem;
-  margin-right: 1.5rem;
-  @media (max-width: 400px) {
-    min-height: 45px;
-    max-height: 45px;
-    min-width: 45px;
-    max-width: 45px;
-  }
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-const TopRowIcons = styled(motion.div)`
-  min-height: 60px;
-  max-height: 60px;
-  min-width: 60px;
-  max-width: 60px;
-  display: inline-block;
-  background: white;
-  border-radius: 5px;
-  margin-right: 1.5rem;
+const IconBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+`;
+
+const IconLink = styled(motion.a)`
+  margin: 0 10px;
+`;
+
+const StyledIcon = styled(motion.div)`
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  }
   @media (max-width: 400px) {
-    min-height: 45px;
-    max-height: 45px;
-    min-width: 45px;
-    max-width: 45px;
+    height: 40px;
+    width: 40px;
   }
 `;
