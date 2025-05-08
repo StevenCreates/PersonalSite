@@ -23,7 +23,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 2 }}>
               <FirstName>Steven</FirstName>
-              <SecondName className='background-clip'>Creates</SecondName>
+              <SecondName className='background-clip'>Hofheins</SecondName>
             </motion.div>
           </AnimatePresence>
           <AnimatePresence layout>
