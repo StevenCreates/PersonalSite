@@ -1,58 +1,26 @@
+Below is the modified content for src/Archive/QuickInfo.js. The changes revolve around the color scheme and fonts to give a more modern feel.
+
 import React from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 
-// const QuickInfoStyles = styled(motion.AnimateTitle)`
-//   margin-top: -1%;
-//   z-index: 89;
-//   padding: 1rem 1.25rem 1rem 1.25rem;
-//   color: #d99a4e;
-//   display: flex;
-//   justify-content: center;
-//   font-size: 36px;
-//   .name-class {
-//     font-size: 24px;
-//     text-align: center;
-//     font-weight: 800;
-//     padding-bottom: 1rem;
-//     color: #d99a4e;
-//   }
-
-//   .item-desc {
-//     display: block;
-//     font-weight: 600;
-//     color: #1bc6b4;
-//     font-size: 18px;
-//   }
-//   }
-//   @media (max-width: 1100px) {
-//     .name-class {
-//       font-size: 24px;
-//       text-align: center;
-//       font-weight: 800;
-//       padding-bottom: 1rem;
-//       color: #d99a4e;
-//     }
-//   }
-// `;
-
 const AnimateTitle = styled(motion.div)`
   font-size: 36px;
-  color: pink;
+  color: #5F6368; // changing color to modern gray color
   padding: 1rem;
   display: inline-block;
+  font-family: 'Roboto', sans-serif; // using modern Roboto font
 `;
 
 export const QuickInfo = () => {
   return (
     <AnimatePresence>
-      {/* <AnimateTitle className='name-class'>Steven Hofheins</AnimateTitle> */}
       <AnimateTitle
         drag
-        // initial={{ y: 0, opacity: 0.5 }}
         animate={{ y: [10, -5, 10, -5, 10] }}
         transition={{ repeat: Infinity, duration: 6, type: "spring" }}
-        className='s1'>
+        className='s1'
+      >
         S
       </AnimateTitle>
       <AnimateTitle drag className='t1'>
@@ -97,3 +65,9 @@ export const QuickInfo = () => {
     </AnimatePresence>
   );
 };
+
+Remember to import the Roboto font to the top of your css file:
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+These changes modify the color of the titles to a modern gray color (#5F6368) and the font to Roboto, which is a clean and modern looking font.

@@ -1,16 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+While the aesthetic of a "modern" website can vary widely based on individual perception, here's a general update to your CSS that could be considered more modern. The update includes a brighter background, a sleek typeface, a basic transition effect on links for smoothing, and a more distinctive color for visited links:
+
+Modified content of src/App.css:
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
 body {
-  background: rgb(21, 21, 21);
-  font-family: "Unica One", cursive;
+  background: rgb(237, 237, 237);
+  font-family: "Roboto", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(63, 63, 63);
+  transition: color 0.3s ease;
 }
 
 a:visited {
-  color: black;
+  color: rgb(120, 120, 120);
 }
+
+This is a basic update, if you have specific ideas about what elements you want modernized (for instance, color, typography, borders, shadows) or if you're trying to match a specific theme or similar website, that information would be necessary to provide a more detailed modification.
