@@ -6,100 +6,70 @@ import NineSquare from "./components/NineSquare";
 
 const GridStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: 1300px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  font-family: 'Source Sans Pro', sans-serif;
 `;
 
 function App() {
   return (
-    <>
-      <GridStyles>
-        <FrontPageStyles>
-          <AnimatePresence layout>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2 }}>
-              <FirstName>Steven</FirstName>
-              <SecondName className='background-clip'>Creates</SecondName>
-            </motion.div>
-          </AnimatePresence>
-          <AnimatePresence layout>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2 }}>
-              <AboutMe>Software Engineer</AboutMe>
-            </motion.div>
-          </AnimatePresence>
-        </FrontPageStyles>
-        <SecondGrid>
-          <NineSquare />
-        </SecondGrid>
-      </GridStyles>
-    </>
+    <GridStyles>
+      <FrontPageStyles>
+        <AnimatePresence layout>
+          <MotionDiv>
+            <FirstName>Steven</FirstName>
+            <SecondName>Creates</SecondName>
+          </MotionDiv>
+        </AnimatePresence>
+        <AnimatePresence layout>
+          <MotionDiv>
+            <AboutMe>Software Engineer</AboutMe>
+          </MotionDiv>
+        </AnimatePresence>
+      </FrontPageStyles>
+      <SecondGrid>
+        <NineSquare />
+      </SecondGrid>
+    </GridStyles>
   );
 }
 
 export default App;
 
 const FrontPageStyles = styled.div`
-  margin-top: 15rem;
-  margin-left: 20rem;
-  @media (max-width: 1300px) {
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+  text-align: center;
+  padding: 2rem;
+  color: white;
 `;
 
-const FirstName = styled.span`
-  font-size: 128px;
-  display: block;
-  color: #487e80;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
+const MotionDiv = styled(motion.div)`
+  initial={{ opacity: 0, y: -50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
 `;
 
-const SecondName = styled.span`
-  font-size: 128px;
-  display: block;
-  background: -webkit-linear-gradient(#e6d2d1, #3e496c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
+const FirstName = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: #61DBFB;
 `;
 
-const AboutMe = styled.span`
-  font-size: 45px;
-  color: #ffffff;
-  padding-left: 0.5rem;
-  font-family: "Comfortaa", cursive;
-  @media (max-width: 500px) {
-    font-size: 24px;
-  }
+const SecondName = styled.h2`
+  font-size: 2rem;
+  margin-top: 0;
+  color: #61DBFB;
+`;
+
+const AboutMe = styled.h3`
+  font-size: 1.25rem;
+  color: #DBDB61;
 `;
 
 const SecondGrid = styled.div`
-  margin-top: 15rem;
-  padding-top: 2rem;
-  padding-left: 8rem;
-  @media (max-width: 1300px) {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0;
-    padding-left: 0;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
 `;
