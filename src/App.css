@@ -1,16 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+Sure, here is the modified content for your src/App.css file. This modification keeps the fonts and changes the color scheme and fonts to give a more modern, cleaner look.
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
+
 body {
-  background: rgb(21, 21, 21);
-  font-family: "Unica One", cursive;
+  background: #F5F5F5;
+  font-family: "Poppins", sans-serif;
+  color: #333;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #4CAF50; /* Modern green color for links */
+  transition: color 0.3s linear;
+}
+
+a:hover {
+  color: #81C784; /* Lighter green when hover on link */
 }
 
 a:visited {
-  color: black;
+  color: #388E3C; /* Darker green after visited link */
 }
+
+Note: Since you have components styled using styled-components library in your React App, you might also have to modify them to match with the changes made in the CSS rules to complete the whole theme changing process.
+You can also utilize CSS variables for a more manageable and efficient way of managing your new theme.

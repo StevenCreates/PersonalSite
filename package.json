@@ -1,3 +1,9 @@
+Apologies for the confusion, but the package.json file doesn't directly control the theme or aesthetic features of a website. It's a file primarily used for managing the project dependencies, scripts, version, and other metadata.
+
+The theme of the website is generally controlled by CSS / SCSS / SASS files or in the case of a react project, through styled-components and inline styles in your javascript or jsx files. If you are trying to make a site more modern, you might want to look into adding or updating CSS libraries or frameworks in your "dependencies" or changing the styles used in your components.
+
+If you do want to add a new dependency, for example you want to use a UI library like Material UI, you can add it to your dependencies like this:
+
 {
   "name": "ps",
   "version": "0.1.0",
@@ -9,6 +15,7 @@
     "@testing-library/user-event": "^7.1.2",
     "d3": "^6.2.0",
     "framer-motion": "^2.9.1",
+    "material-ui": "^0.20.2",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -39,3 +46,5 @@
     ]
   }
 }
+
+You will then need to change your component code to use this new library to achieve the desired modern look.

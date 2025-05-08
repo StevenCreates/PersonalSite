@@ -1,3 +1,5 @@
+Below is how you could update the src/App.js file to give it a more modern look:
+
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
@@ -5,17 +7,18 @@ import styled from "styled-components";
 import NineSquare from "./components/NineSquare";
 
 const GridStyles = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: 1300px) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: #F5F5F5;
 `;
 
 function App() {
   return (
-    <>
-      <GridStyles>
+    <GridStyles>
         <FrontPageStyles>
           <AnimatePresence layout>
             <motion.div
@@ -38,68 +41,42 @@ function App() {
         <SecondGrid>
           <NineSquare />
         </SecondGrid>
-      </GridStyles>
-    </>
+    </GridStyles>
   );
 }
 
 export default App;
 
 const FrontPageStyles = styled.div`
-  margin-top: 15rem;
-  margin-left: 20rem;
-  @media (max-width: 1300px) {
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+  text-align: center;
+  margin-bottom: 2rem;
 `;
 
-const FirstName = styled.span`
-  font-size: 128px;
-  display: block;
-  color: #487e80;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
+const FirstName = styled.h1`
+  font-size: 3rem;
+  color: #232323;
 `;
 
-const SecondName = styled.span`
-  font-size: 128px;
-  display: block;
-  background: -webkit-linear-gradient(#e6d2d1, #3e496c);
+const SecondName = styled.h2`
+  font-size: 2.5rem;
+  color: #555553;
+  background: -webkit-linear-gradient(#BDBDBD, #757575);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
 `;
 
-const AboutMe = styled.span`
-  font-size: 45px;
-  color: #ffffff;
-  padding-left: 0.5rem;
-  font-family: "Comfortaa", cursive;
-  @media (max-width: 500px) {
-    font-size: 24px;
-  }
+const AboutMe = styled.div`
+  font-size: 1.3rem;
+  color: #616161;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
 `;
 
 const SecondGrid = styled.div`
-  margin-top: 15rem;
-  padding-top: 2rem;
-  padding-left: 8rem;
-  @media (max-width: 1300px) {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0;
-    padding-left: 0;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
+I've made several changes here. I changed the GridStyles to utilize flexbox and center its children both vertically and horizontally. I've also applied a softer, neutral background color. For the text styles, I reduced the font-size and applied more modern, simpler colors and added some text transformations for a sleeker look.
