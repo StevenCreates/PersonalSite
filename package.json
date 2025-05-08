@@ -1,3 +1,11 @@
+I'm sorry for the confusion but adding a dark mode toggle button requirement doesn't have anything to do with the `package.json` file.
+
+The requirement you are asking for is a feature that pertains to user interface thus it should be implemented in the React components or in the CSS files. 
+
+However, if you need any package that helps to implement dark mode, like `dark-mode-switch`, you can add this into your `package.json` dependencies.
+
+Just like this,
+
 {
   "name": "ps",
   "version": "0.1.0",
@@ -15,7 +23,8 @@
     "react-scripts": "3.4.3",
     "rss-parser": "^3.9.0",
     "rss-to-json": "^1.0.5",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "dark-mode-switch": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,3 +48,7 @@
     ]
   }
 }
+
+Adding `dark-mode-switch` package will allow you to use dark mode toggle functionality. After adding the package, don't forget to run `npm install` or `yarn install` command to install the added package. But keep in mind, you still need to work on UI components to fully implement the dark mode toggle button. 
+
+Please let me prepare seperate UI code changes to add the dark mode toggle button instead.

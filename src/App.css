@@ -1,16 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
-body {
+To implement this change, there are two steps:
+
+1. Add a CSS rule for your dark mode toggle button.
+2. Add conditional CSS rules that are applied based on whether dark mode is enabled.
+
+To start with, we should define styles for the dark mode toggle button. For instance, as a starting point the button could be styled as below:
+
+.toggle-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+  transition: background 0.3s, color 0.3s;
+}
+
+.toggle-button.dark-mode {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+The .toggle-button style is applied to the button normally. When dark mode is active, the .dark-mode class should also be added to the button, which changes the button's style accordingly.
+
+For applying dark styles throughout your website, you will likely need to use JavaScript in your React components to conditionally add a .dark-mode class to other parts of the site. You might also need to use styled-components or similar so you can control styles from JavaScript.
+
+As src/App.css is just a CSS file, you cannot directly add the functionality to toggle dark mode from there. CSS files are simply for styling, this task involves using JavaScript to dynamically change the class applied which needs to be done in your javascript files.
+
+For example, you might add to your Body component in App.js (since I see it's using styled-components):
+
+const Body = styled.div`
   background: rgb(21, 21, 21);
   font-family: "Unica One", cursive;
-}
+  color: #fff;
 
-a {
-  text-decoration: none;
-  color: black;
-}
+  &.dark-mode {
+    background: #000;
+    color: #fff;
+  }
+`;
 
-a:visited {
-  color: black;
-}
+And then use a state variable in your component to toggle the 'dark-mode' class on the Body when the button is clicked.
