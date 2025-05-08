@@ -1,3 +1,7 @@
+Sure! To modernize the theme, we can modify colors, font sizes, and any other visual properties as needed.
+
+Here's one way we could update your application:
+
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
@@ -47,59 +51,31 @@ export default App;
 
 const FrontPageStyles = styled.div`
   margin-top: 15rem;
-  margin-left: 20rem;
-  @media (max-width: 1300px) {
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+  margin-left: 5rem;
 `;
 
 const FirstName = styled.span`
-  font-size: 128px;
+  font-size: 50px;
   display: block;
-  color: #487e80;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
+  color: #1d3557;
 `;
 
 const SecondName = styled.span`
-  font-size: 128px;
+  font-size: 50px;
   display: block;
-  background: -webkit-linear-gradient(#e6d2d1, #3e496c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
+  color: #457b9d;
 `;
 
 const AboutMe = styled.span`
-  font-size: 45px;
-  color: #ffffff;
-  padding-left: 0.5rem;
-  font-family: "Comfortaa", cursive;
-  @media (max-width: 500px) {
-    font-size: 24px;
-  }
+  font-size: 30px;
+  color: #1d3557;
+  font-family: "Roboto", sans-serif;
 `;
 
 const SecondGrid = styled.div`
   margin-top: 15rem;
   padding-top: 2rem;
   padding-left: 8rem;
-  @media (max-width: 1300px) {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0;
-    padding-left: 0;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
 `;
+
+This will change the design to be cleaner and more modern, with a new color palette and simpler margins. This is just a suggestion and can be adjusted to meet your design needs.

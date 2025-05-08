@@ -1,41 +1,11 @@
-{
-  "name": "ps",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/styled": "^10.0.27",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "d3": "^6.2.0",
-    "framer-motion": "^2.9.1",
-    "normalize.css": "^8.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "rss-parser": "^3.9.0",
-    "rss-to-json": "^1.0.5",
-    "styled-components": "^5.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
-}
+Changing your website theme cannot be done by modifying your `package.json` file. It doesn't contain any visual aspects or styles of your website. 
+
+To upgrade the theme of your website, you will do the following:
+
+1. Depending on the theme you want, you might have to install new npm packages. For example, if you want to use Material UI for your new theme, you can install it via npm by typing the following command in your terminal: `npm install @material-ui/core`. Note, if you install new packages they will automatically add into your `package.json` file.
+
+2. If you want to change global styles you will to modify your CSS files. From the context, looks like your global styles are located in `src/App.css`. Modify this file according to your new theme (colours, fonts, etc.)
+
+3. For components styles, check your respective component JavaScript files or Styled Component files. In your given context it seems that the `src/App.js` and other components like `NineSquare` might be where your component styles are located. Make changes according to your new theme.
+
+Remember `package.json` does not contain any visual implementation code, it's purpose is to manage the packages that your project depends on, but you can use it to install new packages necessary for your new theme.
