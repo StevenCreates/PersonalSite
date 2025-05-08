@@ -44,16 +44,13 @@ function App() {
           }}
         />
 
-        {NAME.map((name) => (
-          <BouncingName
-            letter={name.letter}
-            size={name.size}
-            delay={name.delay}
-            startPoint={name.startPoint}
-            // endPoint={}
-            color={name.color}
-          />
-        ))}
+        <BouncingName
+          letter="Steven Hofheins"
+          size={24}
+          delay={0.5}
+          startPoint={-100}
+          color="#FFFFFF"
+        />
         <motion.div
           onHoverStart={{ scale: 1.2 }}
           style={{
