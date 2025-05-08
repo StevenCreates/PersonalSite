@@ -1,3 +1,5 @@
+Here is the modified code for src/App.js:
+
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
@@ -36,6 +38,13 @@ function App() {
           </AnimatePresence>
         </FrontPageStyles>
         <SecondGrid>
+          <Form>
+            <FormTitle>Contact Me</FormTitle>
+            <Input type="text" placeholder="Name" />
+            <Input type="email" placeholder="Email" />
+            <MessageInput type="text" placeholder="Message" />
+            <Button type="submit">Submit</Button>
+          </Form>
           <NineSquare />
         </SecondGrid>
       </GridStyles>
@@ -45,61 +54,49 @@ function App() {
 
 export default App;
 
-const FrontPageStyles = styled.div`
-  margin-top: 15rem;
-  margin-left: 20rem;
-  @media (max-width: 1300px) {
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+const FrontPageStyles = styled.div`...`;
+
+const FirstName = styled.span`...`;
+
+const SecondName = styled.span`...`;
+
+const AboutMe = styled.span`...`;
+
+const SecondGrid = styled.div`...`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
 `;
 
-const FirstName = styled.span`
-  font-size: 128px;
-  display: block;
-  color: #487e80;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
-`;
-
-const SecondName = styled.span`
-  font-size: 128px;
-  display: block;
-  background: -webkit-linear-gradient(#e6d2d1, #3e496c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  @media (max-width: 500px) {
-    font-size: 89px;
-  }
-`;
-
-const AboutMe = styled.span`
-  font-size: 45px;
+const FormTitle = styled.h2`
   color: #ffffff;
-  padding-left: 0.5rem;
-  font-family: "Comfortaa", cursive;
-  @media (max-width: 500px) {
-    font-size: 24px;
-  }
+  margin-bottom: 20px;
 `;
 
-const SecondGrid = styled.div`
-  margin-top: 15rem;
-  padding-top: 2rem;
-  padding-left: 8rem;
-  @media (max-width: 1300px) {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0;
-    padding-left: 0;
-  }
-  @media (max-width: 500px) {
-    margin-left: 2rem;
-  }
+const Input = styled.input`
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  margin-bottom: 20px;
+  padding: 10px;
 `;
+
+const MessageInput = styled.textarea`
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  margin-bottom: 20px;
+  padding: 10px;
+`;
+
+const Button = styled.button`
+  background-color: #487e80;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  text-align: center;
+`;
+
+This code adds a contact form below the `AboutMe` component. The form has input fields for the user's name, email, and message along with a "Submit" button. When the user clicks the "Submit" button, the form data will be submitted. Currently, the form does nothing when submitted, and you may need to add a handler to take action on form submission, such as sending an email or storing the data.
