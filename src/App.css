@@ -1,3 +1,7 @@
+Adding a form to the website would require modifying the HTML or JavaScript file. The CSS file is used for styling how elements on the website look.
+
+However, once you have the form added in your HTML or JavaScript file, you could certainly update src/App.css to style your new contact form. Here is what your src/App.css file could look like with added CSS for a contact form:
+
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
@@ -14,3 +18,32 @@ a {
 a:visited {
   color: black;
 }
+
+/* Start of new styles for contact form */
+.contact-form {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-form button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* End of new styles for contact form */
+
+The above CSS will give your form and its fields (input, textarea) some basic styling. It will also style your form submission button. Make sure that you add classes to your form and its elements in your HTML or JavaScript file to match the class selectors used in this CSS (.contact-form, .contact-form input, .contact-form textarea, .contact-form button).

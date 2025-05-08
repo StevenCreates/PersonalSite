@@ -12,6 +12,40 @@ const GridStyles = styled.div`
   }
 `;
 
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 2em;
+`;
+
+const ContactLabel = styled.label`
+  margin-bottom: 0.5em;
+  color: #333;
+  font-weight: bold;
+`;
+
+const ContactInput = styled.input`
+  padding: 0.5em;
+  border: none;
+  border-radius: 3px;
+`;
+
+const ContactTextArea = styled.textarea`
+  padding: 0.5em;
+  border: none;
+  border-radius: 3px;
+`;
+
+const ContactButton = styled.button`
+  background-color: #3e87e3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5em;
+`;
+
 function App() {
   return (
     <>
@@ -36,6 +70,15 @@ function App() {
           </AnimatePresence>
         </FrontPageStyles>
         <SecondGrid>
+          <ContactForm>
+            <ContactLabel htmlFor="name">Your Name:</ContactLabel>
+            <ContactInput type="text" id="name" name="name" required />
+            <ContactLabel htmlFor="email">Your Email:</ContactLabel>
+            <ContactInput type="email" id="email" name="email" required />
+            <ContactLabel htmlFor="message">Your Message:</ContactLabel>
+            <ContactTextArea id="message" name="message" required />
+            <ContactButton type="submit">Send</ContactButton>
+          </ContactForm>
           <NineSquare />
         </SecondGrid>
       </GridStyles>
