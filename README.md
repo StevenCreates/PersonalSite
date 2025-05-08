@@ -9,3 +9,6 @@
 - Styled Components
 - Framer Motion
 - Netlify
+- ModernUI
+
+Note: We are upgrading the theme of the website to meet modern user interface standards.
