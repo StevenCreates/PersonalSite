@@ -2,15 +2,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
 body {
-  background: rgb(21, 21, 21);
+  background: #f4f4f4;
   font-family: "Unica One", cursive;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
 }
-
 a {
   text-decoration: none;
-  color: black;
+  color: #007bff;
 }
-
 a:visited {
-  color: black;
+  color: #007bff;
+}
+a:hover,
+a:focus {
+  color: #0056b3;
+  text-decoration: underline;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
